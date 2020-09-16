@@ -1,30 +1,10 @@
-console.log("Hej på er")
+const express = require('express')
+const app = express()
+const port = 3000
 
-let name = "Patrick" 
+const clientDir = __dirname + '\\client\\'
 
-console.log(name)
+app.get('/', (req, res) => res.sendFile(clientDir + 'index.html'))
+app.get('/MainStyle', (req, res) => res.sendFile(clientDir + 'style.css'))
 
-name += " Stroka" 
-
-console.log(name)
-
-let age = 12
-
-console.log("My age is: " + age)
-
-age ++ 
-
-console.log("My age next year will be " + age)
-
-let alive = false 
-
-if (alive){
-    console.log("You are alive")
-}
-else {
-    console.log("You are dead")
-}
-
-if (name != "Niklas Hjelm"){
-    console.log("Drip too hard")
-}
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
