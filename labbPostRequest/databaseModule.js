@@ -19,3 +19,7 @@ exports.storePerson = (name, email, age) => {
        console.log(result)
      })
  }
+
+ exports.storeElement = async (element) => {
+   await element.save()
+ }
